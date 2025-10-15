@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Demonstração RC6</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔐</text></svg>">
+</head>
+
+<body>
+    <h1>Demonstração da Cifra RC6</h1>
+
+    <div class="row">
+        <label>Texto</label>
+        <textarea id="message" rows="3">hello world</textarea>
+    </div>
+
+    <div class="row">
+        <label for="key">Chave (máx 16 chars):</label>
+        <input id="key" value="secretkey" maxlength="16" />
+        <label style="margin-top: 0.5em;">Chave em hexadecimal:</label>
+        <pre id="key-hex"></pre>
+    </div>
+
+    <div style="display: flex; gap: 0.5em">
+        <button id="encrypt-button">Criptografar</button>
+        <button id="decrypt-button">
+            Descriptografar
+        </button>
+    </div>
+
+    <hr style="margin: 1em 0;">
+    <div class="row">
+        <label>Hexadecimal do texto criptografado</label>
+        <pre id="cipher"></pre>
+    </div>
+
+    <div class="row">
+        <label>Texto criptografado</label>
+        <textarea id="cipher-input" rows="4" placeholder="Cole hexadecimal encriptado aqui..."></textarea>
+    </div>
+    <button id="manual-decrypt-button">Descriptografar hexadecimal</button>
+
+    <hr style="margin: 1em 0;">
+
+    <div class="row">
+        <label>Texto decodificado</label>
+        <pre id="plain"></pre>
+    </div>
+
+    <script src="rc6.js"></script>
+</body>
+
+</html>
